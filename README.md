@@ -1,50 +1,86 @@
-# Insider QA Test Automation Project
+# Yavuzcan Çiçek - QA Automation Case Study
 
-This project contains automated UI tests for the Insider website (useinsider.com) using Selenium WebDriver, Java, and TestNG. The tests are designed following the Page Object Model (POM) design pattern for maintainability and scalability.
+This repository contains my solution for a QA automation case study.  
+It includes automated UI tests for the **Insider website (useinsider.com)** using Selenium WebDriver, Java, and TestNG.  
+The tests are implemented using the **Page Object Model (POM)** design pattern for better maintainability and scalability.
+
+---
 
 ## 🚀 Project Overview
 
-The main goal of this project is to automate a specific test scenario on the Insider website, focusing on the Careers page and job application process.
+The main goal of this project is to automate a specific end‑to‑end test scenario on the Insider website, focusing on the Careers page and job application process.
 
-### Test Scenario Steps:
+### Test Scenario Steps
 
-1.  **Visit Insider Website:** Navigate to `https://useinsider.com/`.
-2.  **Verify Career Page:** Click on "Company" -> "Careers" and verify that the Careers page, Locations, Teams, and Life at Insider sections are visible.
-3.  **Filter Job Positions:** Filter job positions by "Quality Assurance" department and "Istanbul, Turkiye" location.
-4.  **Verify Job Listings:** Verify that all listed job positions contain "Quality Assurance" in their title/department and are located in "Istanbul, Turkiye".
-5.  **Verify Application Redirection:** Click on the "View Role" button for one of the listed jobs and verify that it redirects to the Lever application form page (`jobs.lever.co`).
+1. **Visit Insider Website**  
+   Navigate to `https://useinsider.com/`.
+
+2. **Verify Careers Page**  
+   - Open the "Company" menu.  
+   - Click on **"Careers"**.  
+   - Verify that the **Careers** page is loaded.  
+   - Check that **Locations**, **Teams**, and **Life at Insider** sections are visible.
+
+3. **Navigate to QA Careers**  
+   - From the Careers page, go to the **Quality Assurance** careers section.  
+   - Click on **“See all QA jobs”**.
+
+4. **Filter Job Positions**  
+   - Filter job positions by:
+     - **Department:** `Quality Assurance`
+     - **Location:** `Istanbul, Turkiye`
+
+5. **Verify Job Listings**  
+   - Verify that all listed job positions:
+     - Are related to **Quality Assurance** (position/department),
+     - Have location **“Istanbul, Turkiye”** (or contain `"Istanbul"`).
+
+6. **Verify Application Redirection**  
+   - Click on the **“View Role”** button for one of the listed jobs.  
+   - Verify that the click opens the **Lever application form page** in a new tab/window (`jobs.lever.co`).  
+   - Check that the Lever application page is displayed.
+
+---
 
 ## 🛠️ Technologies Used
 
-*   **Java 17+**: Programming Language
-*   **Selenium WebDriver 4.x**: For browser automation
-*   **TestNG 7.x**: Test Automation Framework
-*   **Maven**: Build Automation Tool
-*   **WebDriverManager 5.x**: To automatically manage browser drivers (ChromeDriver, etc.)
+- **Java 17+** – Programming language  
+- **Selenium WebDriver 4.x** – Browser automation  
+- **TestNG 7.x** – Test framework  
+- **Maven** – Build and dependency management  
+- **WebDriverManager 6.x** – Automatic driver management (ChromeDriver, etc.)  
+- **IntelliJ IDEA** – Recommended IDE (not mandatory)
+
+---
 
 ## 📂 Project Structure
 
-yavuz-insider-test-automation/
+```text
+yavuzcan_cicek_in-test-automation/
 ├── src/
-│ ├── main/
-│ │ └── java/
-│ │ └── com/insider/
-│ │ └── Main.java # (Optional) Main class if any utility is needed
-│ └── test/
-│ └── java/
-│ └── com/insider/
-│ ├── base/ # Base classes for common functionalities
-│ │ └── DriverManager.java # Manages WebDriver setup and teardown
-│ ├── pages/ # Page Object Model classes
-│ │ ├── CareersPage.java
-│ │ ├── HomePage.java
-│ │ ├── LeverPage.java
-│ │ └── QAJobsPage.java
-│ └── tests/ # Test classes
-│ └── InsiderTest.java # Contains all test methods
-├── pom.xml # Maven Project Object Model file
-├── .gitignore # Specifies intentionally untracked files to ignore
-└── README.md # This file
+│   ├── main/
+│   │   └── java/
+│   │       └── com/insider/
+│   │           └── Main.java                # (Optional utility/main entry, not required for tests)
+│   └── test/
+│       └── java/
+│           └── com/insider/
+│               ├── base/                   # Base classes and WebDriver management
+│               │   └── DriverManager.java  # Sets up and tears down WebDriver
+│               ├── pages/                  # Page Object Model classes
+│               │   ├── HomePage.java       # Represents useinsider.com home page
+│               │   ├── CareersPage.java    # Represents Careers page
+│               │   ├── QAJobsPage.java     # Represents QA jobs listing and filters
+│               │   └── LeverPage.java      # Represents Lever application form page
+│               └── tests/
+│                   └── InsiderTest.java    # Contains all TestNG test methods
+├── src/
+│   └── test/
+│       └── resources/
+│           └── testng.xml                  # TestNG suite configuration
+├── pom.xml                                 # Maven configuration (dependencies, plugins, Java 17)
+├── .gitignore                              # Ignored files and folders (target/, .idea/, etc.)
+└── README.md                               # Project documentation (this file)
 
 
 ## ⚙️ Setup and Installation
@@ -105,5 +141,6 @@ Feel free to fork this repository, make improvements, and submit pull requests.
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details (if you choose to add one).
+
 
 ---
